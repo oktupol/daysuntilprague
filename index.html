@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="iso-8859-1">
+<title>How many days until the prague meetup?</title>
+<style type="text/css">
+html{
+	height: 100%;
+}
+body {
+	background-color: #E0E0E0;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#days {
+	color: #141414;
+	text-align: center;
+	font-family: Bookman, Georgia, Times, serif;
+	font-size: 4.5em;
+}
+</style>
+</head>
+<body>
+
+<h1 id="days">psst... gimme dat Javascript</h1>
+
+<script type="text/javascript">
+let daysElement = document.getElementById('days');
+
+let today = new Date(),
+    meetupDate = new Date(2018,10,22),
+    difference = meetupDate.getTime() - today.getTime(),
+    days = Math.ceil(difference / 86400000);
+
+if (days > 0) {
+	daysElement.innerHTML = days + ' day' + (days === 1 ? '' : 's');
+} else if (days > -4) {
+	daysElement.innerHTML = 'The meetup is happening right now!';
+	daysElement.style.fontSize = '1.8em';
+} else {
+	daysElement.innerHTML = 'The meetup is over \u{1f61e}';
+	daysElement.style.fontSize = '1.8em';
+}
+</script>
+</body>
+</html>
