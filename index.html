@@ -18,31 +18,13 @@ body {
 	color: #141414;
 	text-align: center;
 	font-family: Bookman, Georgia, Times, serif;
-	font-size: 4.5em;
+	font-size: 1.8em;
 }
 </style>
 </head>
 <body>
 
-<h1 id="days">psst... gimme dat Javascript</h1>
+<h1 id="days">The meetup is over :(</h1>
 
-<script type="text/javascript">
-let daysElement = document.getElementById('days');
-
-let today = new Date(),
-    meetupDate = new Date(2018,10,22),
-    difference = meetupDate.getTime() - today.getTime(),
-    days = Math.ceil(difference / 86400000);
-
-if (days > 0) {
-	daysElement.innerHTML = days + ' day' + (days === 1 ? '' : 's');
-} else if (days > -4) {
-	daysElement.innerHTML = 'The meetup is happening right now!';
-	daysElement.style.fontSize = '1.8em';
-} else {
-	daysElement.innerHTML = 'The meetup is over \u{1f61e}';
-	daysElement.style.fontSize = '1.8em';
-}
-</script>
 </body>
 </html>
